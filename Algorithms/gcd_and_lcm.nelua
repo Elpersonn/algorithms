@@ -1,0 +1,26 @@
+require 'math'
+require 'io' 
+local function gcd(a: number, b: number)
+    if (a <= 0 or b <= 0) then panic('positive integers only') end
+    while a ~= b do
+        if a > b then
+            a = a - b
+        else
+            b = b - a
+        end
+    end
+    return a
+end
+local function lcm(a: number, b: number)
+    return (a / gcd(a,b) * b)
+end
+print("LCM Algorithm\nInput first number: ")
+local num = io.read()
+print("Input second number")
+local num2 = io.read()
+print(lcm(tonumber(num), tonumber(num2)))
+print("GCD/Euclidean Algorithm\nInput first number: ")
+local num = io.read()
+print("Input second number")
+local num2 = io.read()
+print(gcd(tonumber(num), tonumber(num2)))

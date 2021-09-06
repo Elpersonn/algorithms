@@ -14,6 +14,7 @@ end
 global function lcm(a: number, b: number)
     return (a / gcd(a,b) * b)
 end
+--[[ Uncomment to use sample
 print("LCM Algorithm\nInput first number: ")
 local num = io.read()
 print("Input second number")
@@ -24,3 +25,4 @@ local num = io.read()
 print("Input second number")
 local num2 = io.read()
 print(gcd(tonumber(num), tonumber(num2)))
+]]

@@ -1,20 +1,23 @@
 require 'sequence'
+
 local function swap(list: sequence(integer), elem1: integer, elem2: integer)
-    local temp = list[elem1]
-    list[elem1] = list[elem2]
-    list[elem2] = temp
-end
+    local temp = list[elem1] 
+    list[elem1] = list[elem2] 
+    list[elem2] = temp 
+end 
 global function bubblesort(list: sequence(integer))
-    for i=1, #list-1 do
-        for i, v in pairs(list) do
-            if list[i-1] > v then
-                swap(list, i-1, i)
+    local n = #list 
+    while n > 1 do 
+        for i=1, n-1 do 
+            if list[i] > list[i+1] then 
+                swap(list, i, i+1)
             end
         end
+        n = n - 1
     end
 end
---[[ Uncomment to run sample program
-local list: sequence(integer) = {6,2,2, 5, 6 ,7,0 ,231231, 2, 4, 8,0}
+--[[    Uncomment for sample program
+local list: sequence(integer) = {1,5,4} 
 bubblesort(list)
 for i,v in pairs(list) do
     print(v)
